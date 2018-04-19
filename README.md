@@ -143,7 +143,7 @@ For instance: [http://localhost:8888/swagger-ui.html](http://localhost:8888/swag
 OAuth2 security is supported using JWT (Json Web Tokens). It can be enabled/disabled via spring profiles:
 
 - **no-auth** - No security is enabled
-- **oauth2-auth** - OAuth2 Security using JWT (See property `security.oauth2.resource.jwk.key-set-uri`)
+- **oauth2-auth** - OAuth2 Security using JWT (actually [JWK])(https://tools.ietf.org/html/rfc7517) (See property `security.oauth2.resource.jwk.key-set-uri`)
 
 ## Setup
 
