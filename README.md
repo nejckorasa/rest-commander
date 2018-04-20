@@ -140,6 +140,22 @@ API documents via swagger UI can be accessed via **/swagger-ui.html**
 
 For instance: [http://localhost:8888/swagger-ui.html](http://localhost:8888/swagger-ui.html) if you run the service locally on port 8888.
 
+## Oh, ASCII art
+
+In logs, on startup... 
+
+```
+
+   ____                                          _
+  / ___|___  _ __ ___  _ __ ___   __ _ _ __   __| | ___ _ __
+ | |   / _ \| '_ ` _ \| '_ ` _ \ / _` | '_ \ / _` |/ _ \ '__|
+ | |__| (_) | | | | | | | | | | | (_| | | | | (_| |  __/ |
+  \____\___/|_| |_| |_|_| |_| |_|\__,_|_| |_|\__,_|\___|_|
+
+
+```
+[banner.txt](https://github.com/nejckorasa/rest-commander/blob/master/src/main/resources/banner.txt)
+
 ## Security
 
 OAuth2 security is supported using JWT (Json Web Tokens). It can be enabled/disabled via spring profiles:
