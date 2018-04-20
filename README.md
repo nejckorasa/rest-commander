@@ -4,6 +4,8 @@ Spring boot service used to execute commands triggered by REST API endpoint. Som
 
 All commands are executed within one transaction.
 
+![alt text](https://raw.githubusercontent.com/nejckorasa/rest-commander/master/showcase/commander.png)
+
 ## Structure and custom commands
 
 Service works with commands - classes that implement `Cmd`. For example:
