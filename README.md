@@ -1,6 +1,6 @@
 # rest-commander
 
-Spring boot service used to execute commands triggered by REST API endpoint. Some commands are predefined, custom commands can be easily implemented. 
+Spring boot service used to execute commands triggered by REST API endpoint. IIt's main purpose is to act as a simple solution to run static SQL script in a separated service. Some commands (as SQL script command) are predefined, custom commands can be easily implemented. 
 
 All commands are executed within one transaction.
 
