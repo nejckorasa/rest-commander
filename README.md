@@ -88,6 +88,14 @@ Some commands are already implemented and are ready to use.
 
 Used to execute SQL scripts (files that end with `.sql`) on classpath. Scripts are executed in alphabetical order.
 
+#### Loading scripts
+
+Scripts on classpath (resources) are loaded by default. Additional scripts location can be added via property `script.path`, for instance:
+
+```
+script.path=/Users/nejckorasa/my/path/to/scripts
+```
+
 #### Filtering
 
 Filtering of scripts is also supported via properties:
