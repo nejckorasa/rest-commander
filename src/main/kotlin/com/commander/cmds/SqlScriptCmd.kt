@@ -13,6 +13,7 @@ import java.io.InputStream
 import java.io.InputStreamReader
 import java.nio.charset.Charset
 import java.nio.charset.StandardCharsets
+import javax.annotation.PostConstruct
 import javax.sql.DataSource
 
 private data class SqlScript(val name: String, val sql: String)
@@ -46,21 +47,24 @@ class SqlScriptCmd(
     private val logger = LoggerFactory.getLogger(SqlScriptCmd::class.java)
     private var scripts = listOf<SqlScript>()
 
+    @PostConstruct
+    fun init() {
+
+        if (!alwaysReload) {
+            scripts = loadScripts()
+            when {
+                logger.isDebugEnabled -> logger.debug("Loaded scripts: ${scripts.asSequence().joinToString(",")}")
+                else -> logger.info("Loaded scripts: ${scripts.asSequence().map { it.name }.joinToString(",")}")
+            }
+        }
+    }
+
 
     override fun getName() = "SQL_SCRIPT"
 
-    override fun execute() {
-
-        if (alwaysReload) {
-            logger.debug("Reloading scripts")
-            runScripts(loadScripts())
-        } else {
-            if (scripts.isEmpty()) {
-                logger.debug("Loading scripts")
-                scripts = loadScripts()
-            }
-            runScripts(scripts)
-        }
+    override fun execute() = when {
+        alwaysReload -> runScripts(loadScripts())
+        else -> runScripts(scripts)
     }
 
     private fun runScripts(scripts: List<SqlScript>) = scripts.forEach { script ->
