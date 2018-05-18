@@ -130,7 +130,7 @@ In properties all scripts are presented using the file name a script, for instan
 
 #### Reloading (hot swap)
 
-Scripts can either be loaded each time before execution or only once (before first execution). This can be configured via property:
+Scripts can either be loaded each time before execution or only once (on application startup). This can be configured via property:
 
 - **script.always-reload**
 
@@ -179,4 +179,10 @@ OAuth2 security is supported using JWT (Json Web Tokens). It can be enabled/disa
 - Build project via Maven (`mvn install`)
 - Run created jar via (for instance) `java -jar commander-0.0.1-SNAPSHOT.jar`. 
 You may want to run jar as a service or at least use `nohup`
+
+### Run as a service
+
+To control the application’s service and you use a [.conf file](https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html#deployment-script-customization-conf-file) to customize its startup. The file is expected to be next to the jar file and have the same name but suffixed with `.conf` rather than `.jar`.
+
+Run the service as `commander.jar start`. Commands restart, stop and status are also supported.
 
