@@ -69,6 +69,13 @@
 			<version>2.0.0.RELEASE</version>
 		</dependency>
 
+		<!-- SQL server JDBC driver -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>6.2.2.jre8</version>
+		</dependency>
+
 		<!-- Oracle JDBC driver -->
 		<dependency>
 			<groupId>com.github.noraui</groupId>
